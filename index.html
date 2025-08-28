@@ -4,11 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Moving Panic - Fire Your Agency. Hire Our Robots.</title>
-    <!-- 
-        SETUP INSTRUCTIONS:
-        1. Replace 'logo.png' in the header with the path to your red Moving Panic logo image
-        2. To change videos, replace the numbers after /video/ in each iframe src URL with your Vimeo video IDs
-    -->
+
+    <!-- Open Graph / Social Share -->
+    <meta property="og:title" content="Moving Panic - Fire Your Agency. Hire Our Robots." />
+    <meta property="og:description" content="AI does the heavy lifting. We do the creative thinking. You get ads that go viral." />
+    <meta property="og:image" content="https://movingpanic.ai/og-image.png" />
+    <meta property="og:url" content="https://movingpanic.ai" />
+    <meta property="og:type" content="website" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Moving Panic - Fire Your Agency. Hire Our Robots." />
+    <meta name="twitter:description" content="AI does the heavy lifting. We do the creative thinking. You get ads that go viral." />
+    <meta name="twitter:image" content="https://movingpanic.ai/og-image.png" />
+
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
         
@@ -220,6 +229,8 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
+            text-align: center;
+            display: inline-block;
         }
 
         .submit-button:hover {
@@ -282,7 +293,7 @@
 
         <section class="video-section">
             <div class="video-grid">
-                <!-- Video 1 - Replace the number after /video/ with your Vimeo video ID -->
+                <!-- Video 1 -->
                 <div class="video-wrapper">
                     <iframe src="https://player.vimeo.com/video/231621804?h=0&badge=0&autopause=0&player_id=0&app_id=58479" 
                             allow="autoplay; fullscreen; picture-in-picture" 
@@ -290,7 +301,7 @@
                             title="Video 1">
                     </iframe>
                 </div>
-                <!-- Video 2 - Replace the number after /video/ with your Vimeo video ID -->
+                <!-- Video 2 -->
                 <div class="video-wrapper">
                     <iframe src="https://player.vimeo.com/video/231624972?h=0&badge=0&autopause=0&player_id=0&app_id=58479" 
                             allow="autoplay; fullscreen; picture-in-picture" 
@@ -298,7 +309,7 @@
                             title="Video 2">
                     </iframe>
                 </div>
-                <!-- Video 3 - Replace the number after /video/ with your Vimeo video ID -->
+                <!-- Video 3 -->
                 <div class="video-wrapper">
                     <iframe src="https://player.vimeo.com/video/243958607?h=0&badge=0&autopause=0&player_id=0&app_id=58479" 
                             allow="autoplay; fullscreen; picture-in-picture" 
@@ -306,7 +317,7 @@
                             title="Video 3">
                     </iframe>
                 </div>
-                <!-- Video 4 - Replace the number after /video/ with your Vimeo video ID -->
+                <!-- Video 4 -->
                 <div class="video-wrapper">
                     <iframe src="https://player.vimeo.com/video/231621804?h=0&badge=0&autopause=0&player_id=0&app_id=58479" 
                             allow="autoplay; fullscreen; picture-in-picture" 
@@ -319,7 +330,7 @@
 
         <section class="contact" id="contact">
             <h2>Let's Talk</h2>
-            <form onsubmit="handleSubmit(event)">
+            <form>
                 <div class="form-group">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" required>
@@ -336,7 +347,8 @@
                     <label for="message">Project</label>
                     <textarea id="message" name="message" placeholder="Tell us what you need..." required></textarea>
                 </div>
-                <button type="submit" class="submit-button">Send Message</button>
+                <!-- Updated button -->
+                <a href="mailto:hello@movingpanic.ai" class="submit-button">Send Message</a>
             </form>
         </section>
 
@@ -346,16 +358,5 @@
             </div>
         </footer>
     </div>
-
-    <script>
-        function handleSubmit(e) {
-            e.preventDefault();
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData.entries());
-            console.log('Form submitted:', data);
-            alert('Thanks! We\'ll be in touch within 24 hours.');
-            e.target.reset();
-        }
-    </script>
 </body>
 </html>
