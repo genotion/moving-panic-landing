@@ -1,362 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moving Panic - Fire Your Agency. Hire Our Robots.</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!-- Open Graph / Social Share -->
-    <meta property="og:title" content="Moving Panic - Fire Your Agency. Hire Our Robots." />
-    <meta property="og:description" content="AI does the heavy lifting. We do the creative thinking. You get ads that go viral." />
-    <meta property="og:image" content="https://movingpanic.ai/og-image.png" />
-    <meta property="og:url" content="https://movingpanic.ai" />
-    <meta property="og:type" content="website" />
+  <!-- Primary -->
+  <title>Moving Panic — Fire Your Agency. Hire Our Robots.</title>
+  <meta name="description" content="AI does the heavy lifting. We do the creative thinking. You get ads that go viral.">
+  <link rel="canonical" href="https://movingpanic.ai/">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="Moving Panic - Fire Your Agency. Hire Our Robots." />
-    <meta name="twitter:description" content="AI does the heavy lifting. We do the creative thinking. You get ads that go viral." />
-    <meta name="twitter:image" content="https://movingpanic.ai/og-image.png" />
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://movingpanic.ai/">
+  <meta property="og:title" content="Moving Panic — Fire Your Agency. Hire Our Robots.">
+  <meta property="og:description" content="AI does the heavy lifting. We do the creative thinking. You get ads that go viral.">
+  <meta property="og:image" content="https://movingpanic.ai/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Moving Panic brand image">
 
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Moving Panic — Fire Your Agency. Hire Our Robots.">
+  <meta name="twitter:description" content="AI does the heavy lifting. We do the creative thinking. You get ads that go viral.">
+  <meta name="twitter:image" content="https://movingpanic.ai/og-image.jpg">
 
-        :root {
-            --coral: #FF6B6B;
-            --background: #0a0a0a;
-            --surface: #141414;
-            --text-primary: #ffffff;
-            --text-secondary: #a0a0a0;
-            --text-muted: #666666;
-            --border-color: rgba(255, 255, 255, 0.1);
-        }
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
-            background: var(--background);
-            color: var(--text-primary);
-            line-height: 1.6;
-            font-size: 16px;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
-            min-height: 100vh;
-        }
-
-        /* Subtle depth gradient */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(ellipse at top, rgba(255, 107, 107, 0.03) 0%, transparent 60%);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        /* Container */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 40px;
-            position: relative;
-            z-index: 2;
-        }
-
-        /* Header */
-        header {
-            padding: 80px 0 60px;
-            text-align: center;
-        }
-
-        /* Logo */
-        .logo {
-            display: inline-block;
-            margin-bottom: 40px;
-        }
-
-        .logo img {
-            height: 80px;
-            width: auto;
-            display: block;
-        }
-
-        @media (max-width: 768px) {
-            .logo img {
-                height: 60px;
-            }
-        }
-
-        /* Tagline */
-        .tagline {
-            margin-bottom: 60px;
-        }
-
-        .tagline h1 {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 12px;
-            letter-spacing: -0.02em;
-        }
-
-        .tagline p {
-            font-size: 1.125rem;
-            color: var(--text-secondary);
-            font-weight: 400;
-        }
-
-        .tagline .highlight {
-            color: var(--coral);
-        }
-
-        /* Video Section */
-        .video-section {
-            padding: 40px 0 80px;
-        }
-
-        .video-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-        }
-
-        @media (max-width: 900px) {
-            .video-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-            background: var(--surface);
-            border-radius: 12px;
-            border: 1px solid var(--border-color);
-        }
-
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: none;
-            border-radius: 12px;
-        }
-
-        /* Contact Section */
-        .contact {
-            padding: 80px 0;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .contact h2 {
-            font-size: 2rem;
-            font-weight: 800;
-            text-align: center;
-            margin-bottom: 40px;
-            color: var(--coral);
-        }
-
-        .form-group {
-            margin-bottom: 24px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 14px 18px;
-            background: var(--surface);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            font-size: 1rem;
-            font-family: inherit;
-            color: var(--text-primary);
-            transition: all 0.3s ease;
-        }
-
-        .form-group input::placeholder,
-        .form-group textarea::placeholder {
-            color: var(--text-muted);
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--coral);
-            background: rgba(255, 107, 107, 0.05);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        .submit-button {
-            width: 100%;
-            padding: 16px 32px;
-            background: var(--coral);
-            color: var(--background);
-            border: none;
-            border-radius: 8px;
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 0.5px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            text-transform: uppercase;
-            text-align: center;
-            display: inline-block;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(255, 107, 107, 0.3);
-            background: #ff5252;
-        }
-
-        /* Footer */
-        footer {
-            padding: 40px 0;
-            text-align: center;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .footer-content {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-        }
-
-        /* Fade in animation */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .fade-in {
-            animation: fadeIn 0.8s ease forwards;
-        }
-
-        .video-grid > div {
-            opacity: 0;
-            animation: fadeIn 0.8s ease forwards;
-        }
-
-        .video-grid > div:nth-child(1) { animation-delay: 0.1s; }
-        .video-grid > div:nth-child(2) { animation-delay: 0.2s; }
-        .video-grid > div:nth-child(3) { animation-delay: 0.3s; }
-        .video-grid > div:nth-child(4) { animation-delay: 0.4s; }
-    </style>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      text-align: center;
+    }
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    p {
+      max-width: 600px;
+      margin: 0 auto 2rem;
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 400px;
+    }
+    input, textarea {
+      margin: 0.5rem 0;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1rem;
+    }
+    button {
+      margin-top: 1rem;
+      padding: 0.75rem;
+      border-radius: 8px;
+      border: none;
+      font-size: 1.2rem;
+      background: #ff0055;
+      color: #fff;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #e6004d;
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="logo">
-                <!-- Replace 'logo.png' with your actual logo file path -->
-                <img src="logo.png" alt="Moving Panic">
-            </div>
-            <div class="tagline">
-                <h1>Fire your agency. We've got robots and taste.</h1>
-                <p>AI does the heavy lifting. We do the creative thinking. <span class="highlight">You get ads that go viral.</span></p>
-            </div>
-        </header>
+  <h1>Fire Your Agency. Hire Our Robots.</h1>
+  <p>AI does the heavy lifting. We do the creative thinking. You get ads that go viral.</p>
 
-        <section class="video-section">
-            <div class="video-grid">
-                <!-- Video 1 -->
-                <div class="video-wrapper">
-                    <iframe src="https://player.vimeo.com/video/231621804?h=0&badge=0&autopause=0&player_id=0&app_id=58479" 
-                            allow="autoplay; fullscreen; picture-in-picture" 
-                            allowfullscreen
-                            title="Video 1">
-                    </iframe>
-                </div>
-                <!-- Video 2 -->
-                <div class="video-wrapper">
-                    <iframe src="https://player.vimeo.com/video/231624972?h=0&badge=0&autopause=0&player_id=0&app_id=58479" 
-                            allow="autoplay; fullscreen; picture-in-picture" 
-                            allowfullscreen
-                            title="Video 2">
-                    </iframe>
-                </div>
-                <!-- Video 3 -->
-                <div class="video-wrapper">
-                    <iframe src="https://player.vimeo.com/video/243958607?h=0&badge=0&autopause=0&player_id=0&app_id=58479" 
-                            allow="autoplay; fullscreen; picture-in-picture" 
-                            allowfullscreen
-                            title="Video 3">
-                    </iframe>
-                </div>
-                <!-- Video 4 -->
-                <div class="video-wrapper">
-                    <iframe src="https://player.vimeo.com/video/231621804?h=0&badge=0&autopause=0&player_id=0&app_id=58479" 
-                            allow="autoplay; fullscreen; picture-in-picture" 
-                            allowfullscreen
-                            title="Video 4">
-                    </iframe>
-                </div>
-            </div>
-        </section>
+  <form onsubmit="sendMail(event)">
+    <input type="text" id="name" placeholder="Your Name" required>
+    <input type="email" id="email" placeholder="Your Email" required>
+    <textarea id="message" placeholder="Your Message" rows="5" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
 
-        <section class="contact" id="contact">
-            <h2>Let's Talk</h2>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="company">Company</label>
-                    <input type="text" id="company" name="company">
-                </div>
-                <div class="form-group">
-                    <label for="message">Project</label>
-                    <textarea id="message" name="message" placeholder="Tell us what you need..." required></textarea>
-                </div>
-                <!-- Updated button -->
-                <a href="mailto:hello@movingpanic.ai" class="submit-button">Send Message</a>
-            </form>
-        </section>
+  <script>
+    function sendMail(e) {
+      e.preventDefault();
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const message = document.getElementById('message').value;
 
-        <footer>
-            <div class="footer-content">
-                © 2024 Moving Panic. All rights reserved.
-            </div>
-        </footer>
-    </div>
+      const subject = encodeURIComponent("Message from " + name);
+      const body = encodeURIComponent("Name: " + name + "\nEmail: " + email + "\n\n" + message);
+
+      window.location.href = `mailto:hello@movingpanic.ai?subject=${subject}&body=${body}`;
+    }
+  </script>
 </body>
 </html>
